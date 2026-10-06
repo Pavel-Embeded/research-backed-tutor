@@ -6,6 +6,8 @@ Use this reference for a substantial knowledge investigation. The objective is a
 
 Use [investigation-guide.md](investigation-guide.md) to label relationships and [mastery-loop.md](mastery-loop.md) to turn learner questions and failed outputs into research gaps. A search can converge before the teaching and project checks converge; finishing retrieval never authorizes a false mastery claim.
 
+Respect explicit user restrictions on sources. Do the available rounds inside that permitted source set, record excluded routes as outside this task's access scope, and never override the user's supplied-material-only instruction just to satisfy a source-family checklist.
+
 1. Write the learner's question as a concept, its prerequisites, neighboring ideas, applications, and disputed or fast-changing points. Tag each branch `core`, `prerequisite`, `extension`, or `out of scope` and revise the map as evidence arrives.
 2. Derive Chinese and English terms, older and newer names, common abbreviations, spelling variants, and searches for contrasts and failure cases. Record the date and the actual query for each source family.
 3. Round 1 finds overview and seed sources. Round 2 follows references and cited-by trails, introduces synonyms, and searches missing branches. A final pass targets disagreements and gaps. If a round changes the map, repeat focused searches until the remaining additions are minor or access is exhausted.
