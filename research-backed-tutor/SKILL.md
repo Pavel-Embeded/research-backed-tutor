@@ -1,30 +1,74 @@
 ---
 name: research-backed-tutor
-description: Research a knowledge topic across relevant scholarly, textbook, practitioner, and project sources, then teach it systematically to a beginner with worked reasoning and mastery checks. Use for substantial, source-backed learning requests; not for a quick definition or a simple factual answer.
+description: Research a topic across reliable sources, investigate its typed knowledge network, and teach a zero-prerequisite beginner through derivations, examples, and iterative simulated-learner questions, reconstruction, and independent project checks. Use for substantial source-backed learning; not a quick definition or simple factual answer.
+metadata:
+  version: "2.0.0"
 ---
 
-# Research-backed tutor
+# 研究型知识导师
 
-Build a verifiable knowledge map and teach from first principles. Prioritize conceptual completeness, correct reasoning, and the learner's ability to solve new problems. Do not promise that one lesson makes someone an expert or that any search covers every publication.
+把知识调查、证据核对、从零讲解和输出验证连成一个闭环。目标是让学习者能解释知识的目的、本质、逻辑、关系与细节，脱离范文重建知识网络，并从空白完成有明确质量标准的项目。
 
-## Start with the learning goal
+## 1. 确定主题与验收范围
 
-Identify the exact topic, the learner's starting point, intended use, and desired depth. Ask only for missing details that would materially change the lesson; otherwise state reasonable beginner assumptions and begin. When a Brainstorming skill is actually available and suitable, use it for this intake. If it is unavailable, perform the intake here. Do not rely on an unlisted skill or a cached plugin file.
+确认主题、已有基础、目的、深度、材料和工具。只询问会改变教学的重要缺项；其余采用并说明合理假设。默认零学科前置知识，连后续会用到的术语、符号和操作也要教。
 
-Discover available skills and tools for the current task. Use relevant ones for source access, supplied PDFs, diagrams, or a requested output format. Do not invoke unrelated skills merely to increase the count.
+把“全部知识”“所有细枝末节”落实为明确的主题边界、前置知识、核心内容、相关细节和扩展分支清单。不得悄悄删除难点或把验收范围缩小到容易通过。新发现会影响目标的问题必须纳入范围并重检；真正无关的无限延伸列入下一条线索，不冒称已经穷尽。
 
-## Research and coordinate
+把“世上最好的项目”作为追求高质量的目标：约定完整性、正确性、鲁棒性、性能、可解释性、可复现性等适用指标，结合可核验的优秀基线比较。不能声称无法证明的全球最优。
 
-Read [research-method.md](references/research-method.md) before a substantial research run. Build an initial concept and prerequisite map, then use it to direct searches and find gaps.
+发现实际可用的技能与工具；按任务使用资料读取、检索、图示或文件输出能力。不要依赖未列出的 skill，不因提高数量而使用无关工具。可用且合适时使用 Brainstorming，否则在本 skill 内完成目标分析。
 
-When parallel agents are available and authorized, delegate three distinct tracks: (1) Chinese and international papers, (2) textbooks and explanations by demonstrably qualified researchers or practitioners, and (3) GitHub projects and CSDN explanations. Give each agent the topic, learner goal, shared map, evidence standards, and a request for query logs, source status, findings, conflicts, and gaps. The main agent checks their findings against the underlying sources and integrates the map. If capacity is limited, run the tracks in waves; if agents are unavailable, run them sequentially and say so.
+## 2. 把知识当成可调查的对象
 
-For each source family, make at least two meaningfully different search rounds: initial bilingual terms and synonyms, then refined terms, references, and missing branches. Make a final targeted pass over unresolved concepts. Search CNKI and Google Scholar through permitted access when available; use additional scholarly indexes to cross-check. Search GitHub and CSDN even for a cross-disciplinary topic, but mark a family as low relevance when the results do not inform the lesson. Search book catalogs and accessible textbooks. Separately seek public teaching by named researchers, authors, or practitioners whose contributions are relevant; record when none is verifiable. Do not imply that a catalog entry, abstract, preview, or search snippet is a read full text.
+建立初始概念图前，读 [investigation-guide.md](references/investigation-guide.md)。融合白月光学习法的调查思路：它是什么、来自哪里、为何需要、没有它会怎样、前置是什么、关联谁、谁依赖它、如何发展、哪些内容必留、哪些可推导、哪些是真正新线索、下一步追踪什么。
 
-Keep a compact coverage matrix and search log with dates, queries, source links, access level, selection reasons, conflicting claims, and remaining gaps. Stop after a gap-focused round yields no important new branch or correction; continue or disclose the unresolved gap when it does. Cite evidence near material claims. Prefer primary papers, textbooks, and official documentation for factual or technical claims; corroborate blog posts, repositories, and talks. Treat status, license, and publication date as facts to verify, not assumptions. Respect access restrictions and copyright; summarize rather than reproduce protected text or code.
+调查类比用于启动好奇心，随后必须回到准确术语、定义和条件。区分学习顺序、真实历史、逻辑依赖、因果、应用与普通关联。关系边必须有类型、方向、依据和适用条件；共现不等于因果，类比不等于证明。
 
-## Teach and check mastery
+## 3. 多轮研究并核对证据
 
-Read [teaching-guide.md](references/teaching-guide.md) when constructing the lesson. Default to a complete guide in the user's language, with worked exercises, detailed answers, and a short self-check. Move from the historical or practical problem to prerequisites, definitions, stepwise derivation, concrete examples and analogies, commonly confused ideas, real uses, and finally a return to the whole-system view. Explain why each step follows; show the limits of each analogy. Use equations, proofs, diagrams, or code only where the topic benefits from them.
+实质研究前读 [research-method.md](references/research-method.md)。以知识图驱动检索和缺口补查。保留论文、教材、相关贡献者的公开讲解、GitHub 项目与 CSDN 交叉核查的研究路线。
 
-End with a source-to-concept map, the search coverage and access limitations, disagreements or uncertainty, and questions that reveal whether the learner can transfer the idea to a new case. If the learner fails a check, target the missing prerequisite and teach that part again rather than merely repeating the conclusion.
+对各相关来源族做至少两轮有区别的检索：先用中英文术语与同义词，再追踪引用、细化查询和补缺口，最后检查未解决分支。知网、Google Scholar 等按实际允许的访问方式使用，并用出版社、DOI、OpenAlex、Crossref、Semantic Scholar 等交叉核对。无关来源记录低相关性，不凑数量。
+
+并行 agent 可用且本次任务获准委派时，可分别调查论文、教材与专家、项目与实践资料；否则顺序完成。各路线提交真实查询、来源状态、发现、冲突和缺口，主 agent 回查原始证据。多个 agent 重复同一出处不是多份独立证据。
+
+记录日期、实际查询、链接、读取范围、选择原因、冲突与缺口。全文、章节、摘要、预览、元数据与搜索片段分开标注。关键事实优先使用原始论文、可靠教材和官方文档；不能用项目 Star 或名气代替证据。遵守资料访问和复制条件。
+
+缺口检索没有重要新增分支或纠正时可结束检索阶段；教学验收仍必须继续。研究阶段停止不代表学习者通过了验证。
+
+## 4. 从基础构造讲解
+
+构造课程时读 [teaching-guide.md](references/teaching-guide.md)。用用户语言提供完整手册，依次连接现实问题、前置知识、直觉、准确定义、条件、逐步推导、例子、反例、易混概念、应用和整体网络。
+
+每步说明前提、操作、推论和边界；新符号先解释，不能用“显然”“容易知道”跳过初学者需要的过程。类比后写明哪里失效。数学给中间步骤，代码追踪输入、状态、输出和失败情形，人文区分史料、解释与争议。
+
+## 5. 最终输出前，运行后台初学者闭环
+
+每次实质教学都必须读并执行 [mastery-loop.md](references/mastery-loop.md)，从第一版讲解开始检查，而非只在末尾附自测题。
+
+用户所说“把自己当成智商为 0 的初学者”按严格零前置知识处理：模拟初学者只可使用已教内容和明确的日常常识，不能偷用模型本来的学科知识。分别执行导师、初学者和核验者任务；可用且获准时用独立 agent 隔离上下文，否则在同一 agent 内分工并注明检查的局限。
+
+初学者逐段提问并实际产出：自己的复述、推导、关系图、新题解答、错误诊断和项目实现。核验者用来源、形式条件、独立答案、反例、测试或测量检查这些产物。发现问题立即修改讲解，补齐前置知识，再用不同题重检；不可只修答案而不修教学。
+
+这些检查在当前任务执行过程中完成，不向用户输出冗长的内部讨论或私有推理。最终只提供可检查的产物、关键纠正、实际检查证据和结果摘要。这里的“后台”不表示会在回合结束后持续运行；除非用户另行授权自动化，不创建常驻任务。
+
+## 6. 知识网络与独立项目是必检项
+
+以主题范围内的覆盖矩阵核查：目的、动机、本质、定义、条件、推导、关系、细节、易混项、反例、应用和未解决分支。初学者在看不到完成版图谱时，从已教内容自己生成节点表、带类型的边表和可手绘关系图，并逐项解释边的依据。
+
+项目设计与验证读 [project-lab.md](references/project-lab.md)。初学者必须从空白独立构造核心逻辑，而非抄导师范文；用与示例不同的任务检验，说明每个模块为何存在、依赖什么知识、如何运行和出错时如何定位。生成实际适用的代码、推导、实验方案或证据作品；不能把项目建议书当成已完成项目。
+
+遇到错误、漏点、错误关系或未满足的验收项，返回讲解与研究修订，再重新输出和验证。保留发现 → 修改 → 新检查 → 结果的简要证据。
+
+## 7. 通过条件与交付
+
+仅当 [mastery-loop.md](references/mastery-loop.md) 中的全部必需验收项通过、当前范围未解决问题为零，且连续两轮不同挑战均无新问题或错误，才输出“已通过模拟初学者检查”的完整结果。两轮是最低稳定性检查，不是循环次数上限；任何新问题都要继续修订。
+
+若资料、工具、实测、时间或上下文限制使必需项无法完成，明确标为“未通过／未验证”，列出具体阻塞与下一步，只交付有此标记的阶段成果，不能伪装成最终合格结果，也不能无限空转。不能删掉失败项以宣布通过。
+
+最终结果包括：完整讲解；调查档案；目的与本质；主题范围内完整的知识图、节点／边表与手绘重建步骤；推导和细节；例题、反例、练习与详细答案；独立项目及适用的验证证据；来源对应表、访问边界、下一条线索和简短验收摘要。
+
+AI 的模拟检查不能证明真实用户已经掌握，也不能证明全人类不存在新问题。只有真实用户的独立输出才能支持对其掌握程度的判断。不要承诺一次讲解使人成为专家、无限知识已经穷尽，或某项目是无法核验的全球最佳。
+
+本版本的调查框架来源与适配说明见 [source-notes.md](references/source-notes.md)。

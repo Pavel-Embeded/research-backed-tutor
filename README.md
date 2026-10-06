@@ -1,17 +1,35 @@
 # Research-backed Tutor · 研究型知识导师
 
-**把“从基础讲清楚”变成一套可复用的学习流程：多轮查资料、核对证据、逐步推导，再用例题和自测检查理解。**
+**从调查知识，到自己讲清、画出关系网、从空白完成项目：让 AI 在交付前用零基础初学者的提问和实际输出反复检查讲解。**
 
-这是一个面向 Codex 的跨学科教学 skill。它引导 AI 先建立知识地图，再结合论文、教材、专家公开讲解和相关项目资料，为初学者生成有来源、有推理过程、有练习答案的学习手册。
+这是一个面向 Codex 的跨学科教学 skill。它引导 AI 结合论文、教材、专家公开讲解和项目资料调查知识，再从基础构造完整讲解。**v2.0.0** 融合白月光学习法的知识调查框架，并加入模拟初学者提问、自己输出、修订讲解、重建关系网络和独立项目的循环检查。
 
-[查看主 skill](research-backed-tutor/SKILL.md) · [下载原始安装包](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip) · [反馈问题](https://github.com/Pavel-Embeded/research-backed-tutor/issues)
+[查看主 skill](research-backed-tutor/SKILL.md) · [下载 v2 安装包](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip) · [反馈问题](https://github.com/Pavel-Embeded/research-backed-tutor/issues)
+
+## v2 的新增流程
+
+```text
+知识调查与多轮证据研究
+  → 零前置完整讲解
+  → 初学者逐段提问，并自己复述、推导、画图、解新题和做项目
+  → 核验实际产物
+  → 发现问题或错误：修订讲解、补前置、换题重检
+  → 全部必需项通过，连续两轮不同挑战均无新问题
+  → 交付完整结果和简短验收摘要
+```
+
+“零前置”对应用户要求的“把自己当成智商为 0 的初学者”：模拟角色不能偷用模型本来的学科知识。答案正确但使用了未教的方法，也算讲解缺口。自检在当前任务执行中完成，最终展示产物与证据摘要，不展示冗长内部讨论。
+
+两轮是最低稳定性检查，没有固定最多轮数。发现问题就继续修订并重新计数；必需资料或测试无法完成时标明“未通过／未验证的阶段成果”，不冒称最终验收通过。
 
 ## 一句话开始
 
 安装后，在 Codex 中输入：
 
 ```text
-使用 $research-backed-tutor，从基础讲清这个知识点，并附来源、例题和自测答案。
+使用 $research-backed-tutor，从零调查并讲清这个知识点，
+经过模拟初学者提问纠错、重建完整知识网络和独立项目检验后，
+附来源、例题、自测答案与验收结果。
 ```
 
 把“这个知识点”替换成具体主题，并补充你的基础和学习目的。例如：
@@ -33,6 +51,9 @@
 | 从基础推导 | 按前提、步骤、推论、假设与边界解释；保留关键中间过程 | 学会推理，而非只记结论 |
 | 例题与迁移 | 先给简单例子，再改变条件；比较易混概念与错误解法 | 检查能否在新情境中使用知识 |
 | 自测与补课 | 提供练习、详细答案和自评标准；针对错误补前置知识 | 发现自己具体卡在哪一步 |
+| 后台初学者闭环 | 初学者只使用已教知识，提问并自己输出；有错就改讲解，再换题核验 | 暴露跳步、条件遗漏和看似会了的问题 |
+| 网络重建 | 遮住完成版图谱，自行画出节点与带类型、条件、依据的关系边 | 检查是否理解目的、本质、逻辑与细节 |
+| 独立项目 | 从空白写核心逻辑，按需求、边界与迁移任务实际验证 | 检查能否把知识转化为自己的作品 |
 
 这些是 skill 对执行过程的要求，实际完成情况取决于模型、可用工具、资料访问权限和任务规模。
 
@@ -61,7 +82,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 
 ### 方法二：下载并手动放置
 
-1. [下载原始 ZIP](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip)，解压得到 `research-backed-tutor/`。
+1. [下载 v2 ZIP](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip)，解压得到 `research-backed-tutor/`。
 2. 按使用范围，把该目录放到下面其中一个位置：
 
 | 使用范围 | Windows | macOS / Linux |
@@ -121,6 +142,8 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 5. 易混概念比较、常见错误、实际应用与整体关系。
 6. 检查记忆、解释、应用和错误诊断的练习，配详细答案与自评标准。
 7. 概念与来源的对应表、检索范围、访问限制、未解决的问题和观点分歧。
+8. 范围内完整的知识节点与关系边表、手绘重建步骤，以及模拟初学者自己重建的产物。
+9. 独立项目、需求到知识的对应关系、实际验证证据、迭代纠正与通过／未通过摘要。
 
 输出的数量和篇幅应随主题调整，避免为了填满结构而加入无关内容。完成一份手册不等于学习者已经掌握；自测需要检验能否迁移使用。
 
@@ -133,7 +156,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 - 摘要、目录、预览和搜索片段不能写成“已读全文”。访问不到的来源应说明限制。
 - 检索停止条件是针对缺口的一轮搜索未再产生重要概念分支或纠正；不能宣称穷尽全部文献。
 
-详细规则见 [研究方法](research-backed-tutor/references/research-method.md) 与 [教学指南](research-backed-tutor/references/teaching-guide.md)。
+详细规则见 [研究方法](research-backed-tutor/references/research-method.md)、[教学指南](research-backed-tutor/references/teaching-guide.md)、[知识调查指南](research-backed-tutor/references/investigation-guide.md)、[初学者闭环](research-backed-tutor/references/mastery-loop.md) 和 [独立项目检验](research-backed-tutor/references/project-lab.md)。
 
 ## 仓库结构
 
@@ -141,23 +164,38 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 research-backed-tutor/
 ├── README.md                          # 中文介绍、安装与调用示例
 ├── dist/
-│   └── research-backed-tutor.zip       # 原始上传包，便于直接下载
+│   ├── research-backed-tutor.zip       # 当前 v2.0.0 可安装包
+│   └── research-backed-tutor-original.zip # 初次上传的原始包
+├── THIRD_PARTY_NOTICES.md              # 白月光框架来源与第三方许可
 └── research-backed-tutor/             # 实际安装的 skill 目录
     ├── SKILL.md                       # 触发描述与完整工作流程
     ├── agents/
     │   └── openai.yaml                # 中文显示名、简介和默认提示词
+    ├── licenses/
+    │   └── baiyueguang-MIT.txt         # 原作者的完整 MIT 许可
     └── references/
         ├── research-method.md         # 检索、证据、覆盖矩阵与停止条件
-        └── teaching-guide.md          # 推导、例题、误区、自测与补课方式
+        ├── teaching-guide.md          # 推导、例题、误区、自测与补课方式
+        ├── investigation-guide.md     # 调查入口、节点、带类型的关系与去重
+        ├── mastery-loop.md            # 初学者提问、输出、返修与严格验收
+        ├── project-lab.md             # 从空白构造核心项目并验证
+        └── source-notes.md            # 适配来源、保留项和纠正记录
 ```
 
 ## 当前版本与边界
 
-本仓库发布的是原始 ZIP 中的 4 个 skill 文件，并补充中文 README。`dist/` 保存原始 ZIP，主 skill 和参考文件保留原文。
+当前版本为 **v2.0.0（2026-10-06）**，安装目录名与调用名仍为 `research-backed-tutor`。旧原始包保留在 [research-backed-tutor-original.zip](dist/research-backed-tutor-original.zip)，当前下载入口已更新到 v2。
 
-skill 定义的是研究和教学流程，不能保证所有来源可访问、每次回答都正确，或通过一次学习成为专家。它也不会自动获得付费数据库、绕过访问限制，或替代实际的实验与项目验证。发现证据不足时，应直接标明不确定性。
+- **[保留]** 多来源、多轮检索、证据状态、逐步推导、例题与详细自测答案。
+- **[新增]** 白月光学习法的调查结构、目的与缺失后果、完整知识关系网、下一条线索。
+- **[新增]** 零前置初学者提问与实际输出，错误推动讲解修订，换题重检与连续两轮稳定检查。
+- **[新增]** 遮住完成图谱后重建节点和关系；从空白完成适合学科的核心项目并验证。
+- **[改写]** “全部”对应完整范围矩阵，“世上最好”对应高质量指标与可核验基线，不输出无法证明的全球最优。
+- **[纠正]** 类比、共现和猜测不能冒充推论；去重保留独立来源价值；模拟通过不等于真实用户掌握。
 
-当前包未包含开源许可证，仓库暂未指定许可证。
+skill 定义的是研究、教学与自检要求，不能保证每次执行都正确，也不能保证无限知识穷尽、真实用户已经掌握或项目全球最佳。没有执行的测试和没有取得的硬件、用户或性能证据，都必须标记未验证。模型模拟检查无法替代真实学习者自己画图、作答和做项目。
+
+调查框架适配自 zhiliscope 的 [baiyueguang-learning-skill](https://github.com/zhiliscope/baiyueguang-learning-skill)，本次依据用户提供的 1.0.0 ZIP 快照。原作者版权与 MIT 许可已保留，见 [第三方声明](THIRD_PARTY_NOTICES.md)。该第三方许可不自动覆盖整个仓库；原研究型导师和全部新增内容尚未指定统一开源许可证。
 
 ## 反馈与改进
 

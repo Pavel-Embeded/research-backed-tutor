@@ -16,6 +16,8 @@ Use diagrams or interactive visuals when they reveal a relationship that prose o
 
 ## Default deliverable
 
+Before releasing a complete result, run [mastery-loop.md](mastery-loop.md). Questions and incorrect simulated-learner outputs must revise the explanation itself, followed by fresh checks. Include [investigation-guide.md](investigation-guide.md)'s typed knowledge network and [project-lab.md](project-lab.md)'s independent project. A self-test attached to a lesson does not satisfy these completion gates.
+
 - Learning objective, assumed starting point, and prerequisite map.
 - Background and problem; first-principles explanation with stepwise derivations.
 - At least one simple and one transfer example for each central mechanism; analogies with limitations.
@@ -23,5 +25,7 @@ Use diagrams or interactive visuals when they reveal a relationship that prose o
 - A whole-system summary that reconnects the detailed pieces.
 - Exercises that check recall, explanation, application, and diagnosis of a mistaken approach, followed by fully worked answers and self-check criteria.
 - A concept-to-source table, concise search coverage record, remaining gaps, and any important disagreements.
+- A scope-complete node inventory, typed edge table, hand-drawing reconstruction instructions, and the learner's checked reconstruction artifact.
+- An independently constructed project with requirement-to-concept traceability, actual applicable validation evidence, and a concise simulation-check report. Unmet required gates must remain explicitly failed or unverified.
 
 Adapt quantities to the topic rather than filling sections mechanically. Do not replace the derivation with an analogy or a list of conclusions. Do not state that mastery has been achieved solely because the guide is complete. If the learner answers a check incorrectly, locate the missing prerequisite or inference, reteach it with a new example, and reassess with a different problem.

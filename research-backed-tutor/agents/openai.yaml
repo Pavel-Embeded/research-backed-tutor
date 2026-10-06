@@ -1,4 +1,4 @@
 interface:
   display_name: "研究型知识导师"
-  short_description: "围绕论文教材项目与专家讲解开展多轮检索，并为初学者生成含自测答案的系统学习手册"
-  default_prompt: "使用 $research-backed-tutor，从基础讲清这个知识点，并附来源、例题和自测答案。"
+  short_description: "多来源研究与知识关系网，经过零基础初学者提问、重建和独立项目检验，生成完整学习手册"
+  default_prompt: "使用 $research-backed-tutor，从零调查并讲清这个知识点，经过模拟初学者提问纠错、重建完整知识网络和独立项目检验后，附来源、例题、自测答案与验收结果。"
