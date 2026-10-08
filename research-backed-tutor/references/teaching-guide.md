@@ -2,6 +2,8 @@
 
 Use this reference to turn the checked knowledge map into a complete beginner guide. The goal is understanding that transfers to new problems, not an impressive volume of facts.
 
+Read and apply [plain-language.md](plain-language.md) when writing or revising. Assume the reader has no knowledge of the field, including its terms, symbols, diagrams, methods, and tools. Explain each necessary prerequisite before use. Prefer concrete everyday language, clear subjects, and small connected steps; preserve exact conditions and technical accuracy. Every final sentence and non-sentence expression unit needs its own simulated-beginner check and restatement evidence. This includes headings, tables, diagrams, formulas, code, commands, exercises, answers, and the final check summary. Paragraph sampling and a general claim of readability do not meet this requirement.
+
 ## Build the logical chain
 
 1. State the learner's goal and show a small map of where the topic sits in the larger field. Introduce only prerequisites that later reasoning actually uses.
@@ -11,6 +13,8 @@ Use this reference to turn the checked knowledge map into a complete beginner gu
 5. Give a concrete example followed by a changed example that tests whether the rule still applies. Use analogies to help entry, then say exactly where each analogy breaks.
 6. Compare nearby and easily confused concepts using the same dimensions. Explain typical wrong answers and why they fail.
 7. Show practical uses and then zoom back out: how the parts connect, which ideas generalize, and what remains an open question.
+
+Introduce a small map with explained labels before expanding to the complete network. Show how to read symbols, arrows, and code before relying on them. Put detailed sources and check records where the reader can consult them without interrupting the main learning path. This changes presentation order, not the scope or completion gates. Do not attach a role-play dialogue or a quiz after every sentence; perform the exhaustive checks during the task and present the repaired lesson naturally.
 
 Use diagrams or interactive visuals when they reveal a relationship that prose obscures. Keep terminology consistent across the map, examples, exercises, and answer key. Cite sources beside claims that depend on external evidence; do not cite a repository or blog for a claim it does not establish. Attribute an expert's explanation to its actual lecture or writing, not merely to their reputation. Paraphrase protected material and quote sparingly.
 

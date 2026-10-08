@@ -1,24 +1,36 @@
 # Research-backed Tutor · 研究型知识导师
 
-**从调查知识，到自己讲清、画出关系网、从空白完成项目：让 AI 在交付前用零基础初学者的提问和实际输出反复检查讲解。**
+**把你当作对这个领域一无所知的人，用通俗语言从头讲起，并在交付前逐句检查、逐句完善。**
 
-这是一个面向 Codex 的跨学科教学 skill。它引导 AI 结合论文、教材、专家公开讲解和项目资料调查知识，再从基础构造完整讲解。**v2.0.0** 融合白月光学习法的知识调查框架，并加入模拟初学者提问、自己输出、修订讲解、重建关系网络和独立项目的循环检查。
+这是一个面向 Codex 的跨学科教学 skill，也就是一套可重复使用的任务指令。它引导 AI 结合论文、教材、专家公开讲解和项目资料调查知识，再从基础构造完整讲解。**v3.0.0** 要求用户和每轮模拟初学者都从完全没有领域知识的起点开始；最终每一句都要有实际检查记录，发现不懂或复述错误就改讲解，尽最大可能降低理解成本。
 
-[查看主 skill](research-backed-tutor/SKILL.md) · [下载 v2 安装包](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip) · [反馈问题](https://github.com/Pavel-Embeded/research-backed-tutor/issues)
+[查看主 skill](research-backed-tutor/SKILL.md) · [下载 v3 安装包](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip) · [反馈问题](https://github.com/Pavel-Embeded/research-backed-tutor/issues)
 
-## v2 的新增流程
+## v3 怎样降低理解成本
+
+- **从完全零基础开始**：不默认你懂专业词、符号、图表、方法或工具操作；需要什么就先教什么。
+- **每一句都检查**：正文、练习答案、项目步骤和验收摘要逐句检查；标题、表格、图、公式、代码和命令也按表达单元逐项检查。
+- **用自己的话说明意思**：模拟初学者只能使用此前已经教明白的内容，必须自己复述，不能仅说“我懂了”或偷用模型原有知识。
+- **问题推动讲解修改**：陌生词、含糊指代、隐藏前提、推导跳步或错误复述，都要补讲或重写；新增句和受影响的后文重新检查。
+- **保留准确性与细节**：通过具体表达、拆小步骤和分层展开降低难度，保留定义、条件、反例与完整知识范围。
+
+最终逐句覆盖必须达到 100%，没有未解决的理解障碍，才能通过这一检查。完整结果还要通过 v2 保留的知识网络重建、独立项目和连续两轮不同挑战。这里的通过是实际模拟检查结果，不能代替真实学习者自己作答。
+
+## 完整流程
 
 ```text
 知识调查与多轮证据研究
-  → 零前置完整讲解
-  → 初学者逐段提问，并自己复述、推导、画图、解新题和做项目
+  → 用通俗语言从完全零基础讲起
+  → 初学者逐句提问、用自己的话复述，并推导、画图、解新题和做项目
   → 核验实际产物
   → 发现问题或错误：修订讲解、补前置、换题重检
-  → 全部必需项通过，连续两轮不同挑战均无新问题
+  → 最终每句均检查，全部必需项通过，连续两轮不同挑战均无新问题
   → 交付完整结果和简短验收摘要
 ```
 
-“零前置”对应用户要求的“把自己当成智商为 0 的初学者”：模拟角色不能偷用模型本来的学科知识。答案正确但使用了未教的方法，也算讲解缺口。自检在当前任务执行中完成，最终展示产物与证据摘要，不展示冗长内部讨论。
+“零前置”对应用户要求的“把自己当成智商为 0 的初学者”：这是对允许使用哪些知识的限制，不是对用户智力的评价。每轮从零按阅读顺序检查，不能提前使用上轮答案或后文知识。答案正确但使用了未教的方法，也算讲解缺口。
+
+自检在当前任务执行中完成。逐句记录包含句子编号、此前已教内容、自己的复述、具体问题、讲解修订与复检结果；抽查和可读性评分不能代替这个过程。最终给用户自然、完整的讲解与简短检查摘要，不在每句话后插入检查对话增加阅读负担。逐句审查会增加执行量，任务过大时分章节处理并保持完整覆盖；没有检查的内容必须标记未检查。
 
 两轮是最低稳定性检查，没有固定最多轮数。发现问题就继续修订并重新计数；必需资料或测试无法完成时标明“未通过／未验证的阶段成果”，不冒称最终验收通过。
 
@@ -27,15 +39,15 @@
 安装后，在 Codex 中输入：
 
 ```text
-使用 $research-backed-tutor，从零调查并讲清这个知识点，
-经过模拟初学者提问纠错、重建完整知识网络和独立项目检验后，
-附来源、例题、自测答案与验收结果。
+使用 $research-backed-tutor，把我当作对这个领域一无所知的人，
+用通俗语言讲清每一句；后台每轮也从完全零基础逐句提问、复述、纠错和复检。
+再检验完整知识网络重建与独立项目，附来源、例题、自测答案与实际验收结果。
 ```
 
 把“这个知识点”替换成具体主题，并补充你的基础和学习目的。例如：
 
 ```text
-使用 $research-backed-tutor，给一个刚学数字电路的学生讲清异步 FIFO：
+使用 $research-backed-tutor，给完全没有数字电路基础的人讲清异步 FIFO：
 从时钟域、亚稳态和格雷码开始，逐步解释读写指针与空满判断，
 附可靠来源、具体例子、常见错误、自测题和详细答案。
 ```
@@ -44,11 +56,12 @@
 
 | 环节 | 具体要求 | 对学习者的价值 |
 | --- | --- | --- |
-| 明确目标 | 确认主题、已有基础、应用场景与所需深度；只澄清会影响教学的重要信息 | 讲解从合适的起点开始 |
+| 明确目标 | 确认主题、应用场景与所需深度；未明确声明的领域基础一律从零教 | 不因一个术语就默认已经会了 |
 | 建立知识地图 | 列出前置知识、核心概念、相邻概念、应用与争议 | 知道各部分为什么要学、如何连接 |
 | 多轮研究 | 使用中英文关键词、同义词、参考文献追踪和缺口检索 | 减少只看一次搜索结果造成的遗漏 |
 | 核对来源 | 区分全文、章节、摘要、预览、元数据和搜索片段 | 清楚哪些结论有直接证据 |
 | 从基础推导 | 按前提、步骤、推论、假设与边界解释；保留关键中间过程 | 学会推理，而非只记结论 |
+| 逐句降低难度 | 先讲清事情再给名称，明确指代，补前提；每句和图表公式等逐项检查 | 减少每一步需要自己猜测的内容 |
 | 例题与迁移 | 先给简单例子，再改变条件；比较易混概念与错误解法 | 检查能否在新情境中使用知识 |
 | 自测与补课 | 提供练习、详细答案和自评标准；针对错误补前置知识 | 发现自己具体卡在哪一步 |
 | 后台初学者闭环 | 初学者只使用已教知识，提问并自己输出；有错就改讲解，再换题核验 | 暴露跳步、条件遗漏和看似会了的问题 |
@@ -82,7 +95,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 
 ### 方法二：下载并手动放置
 
-1. [下载 v2 ZIP](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip)，解压得到 `research-backed-tutor/`。
+1. [下载 v3 ZIP](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip)，解压得到 `research-backed-tutor/`。
 2. 按使用范围，把该目录放到下面其中一个位置：
 
 | 使用范围 | Windows | macOS / Linux |
@@ -135,7 +148,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 
 ## 默认学习手册应包含什么
 
-1. 学习目标、假定基础与前置知识地图。
+1. 学习目标、明确声明的日常起点与从零解释的前置知识地图。
 2. 概念出现的背景、要解决的问题、定义与适用边界。
 3. 从基础出发的逐步解释或推导。
 4. 简单例子、迁移例子，以及类比的适用范围。
@@ -144,6 +157,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 7. 概念与来源的对应表、检索范围、访问限制、未解决的问题和观点分歧。
 8. 范围内完整的知识节点与关系边表、手绘重建步骤，以及模拟初学者自己重建的产物。
 9. 独立项目、需求到知识的对应关系、实际验证证据、迭代纠正与通过／未通过摘要。
+10. 最终版本逐句检查的实际覆盖、未解决项和代表性修订；详细记录供复查。
 
 输出的数量和篇幅应随主题调整，避免为了填满结构而加入无关内容。完成一份手册不等于学习者已经掌握；自测需要检验能否迁移使用。
 
@@ -156,7 +170,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 - 摘要、目录、预览和搜索片段不能写成“已读全文”。访问不到的来源应说明限制。
 - 检索停止条件是针对缺口的一轮搜索未再产生重要概念分支或纠正；不能宣称穷尽全部文献。
 
-详细规则见 [研究方法](research-backed-tutor/references/research-method.md)、[教学指南](research-backed-tutor/references/teaching-guide.md)、[知识调查指南](research-backed-tutor/references/investigation-guide.md)、[初学者闭环](research-backed-tutor/references/mastery-loop.md) 和 [独立项目检验](research-backed-tutor/references/project-lab.md)。
+详细规则见 [研究方法](research-backed-tutor/references/research-method.md)、[教学指南](research-backed-tutor/references/teaching-guide.md)、[逐句易懂指南](research-backed-tutor/references/plain-language.md)、[知识调查指南](research-backed-tutor/references/investigation-guide.md)、[初学者闭环](research-backed-tutor/references/mastery-loop.md) 和 [独立项目检验](research-backed-tutor/references/project-lab.md)。
 
 ## 仓库结构
 
@@ -164,7 +178,8 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 research-backed-tutor/
 ├── README.md                          # 中文介绍、安装与调用示例
 ├── dist/
-│   ├── research-backed-tutor.zip       # 当前 v2.0.0 可安装包
+│   ├── research-backed-tutor.zip       # 当前 v3.0.0 可安装包
+│   ├── research-backed-tutor-v2.0.0.zip # 保存的上一版安装包
 │   └── research-backed-tutor-original.zip # 初次上传的原始包
 ├── THIRD_PARTY_NOTICES.md              # 白月光框架来源与第三方许可
 └── research-backed-tutor/             # 实际安装的 skill 目录
@@ -178,20 +193,21 @@ research-backed-tutor/
         ├── teaching-guide.md          # 推导、例题、误区、自测与补课方式
         ├── investigation-guide.md     # 调查入口、节点、带类型的关系与去重
         ├── mastery-loop.md            # 初学者提问、输出、返修与严格验收
+        ├── plain-language.md          # 完全零基础、逐句复述、修订与全覆盖检查
         ├── project-lab.md             # 从空白构造核心项目并验证
         └── source-notes.md            # 适配来源、保留项和纠正记录
 ```
 
 ## 当前版本与边界
 
-当前版本为 **v2.0.0（2026-10-06）**，安装目录名与调用名仍为 `research-backed-tutor`。旧原始包保留在 [research-backed-tutor-original.zip](dist/research-backed-tutor-original.zip)，当前下载入口已更新到 v2。
+当前版本为 **v3.0.0（2026-10-08）**，安装目录名与调用名仍为 `research-backed-tutor`。旧原始包保留在 [research-backed-tutor-original.zip](dist/research-backed-tutor-original.zip)，上一版保留在 [research-backed-tutor-v2.0.0.zip](dist/research-backed-tutor-v2.0.0.zip)，当前下载入口已更新到 v3。
 
-- **[保留]** 多来源、多轮检索、证据状态、逐步推导、例题与详细自测答案。
-- **[新增]** 白月光学习法的调查结构、目的与缺失后果、完整知识关系网、下一条线索。
-- **[新增]** 零前置初学者提问与实际输出，错误推动讲解修订，换题重检与连续两轮稳定检查。
-- **[新增]** 遮住完成图谱后重建节点和关系；从空白完成适合学科的核心项目并验证。
-- **[改写]** “全部”对应完整范围矩阵，“世上最好”对应高质量指标与可核验基线，不输出无法证明的全球最优。
-- **[纠正]** 类比、共现和猜测不能冒充推论；去重保留独立来源价值；模拟通过不等于真实用户掌握。
+- **[保留]** v2 的多来源研究、白月光调查思路、完整知识网络、例题答案、独立项目及严格验收。
+- **[改写]** 用户与每轮模拟初学者均从完全没有领域基础开始；逐段质疑改为逐句检查。
+- **[新增]** 每句的编号、已教依赖、自己的复述、问题与修订记录；最终句子和表达单元必须 100% 覆盖。
+- **[新增]** 通俗措辞、清楚指代、先教前置、补全推理；图、公式、代码和命令的读法与操作也从零讲。
+- **[改写]** 连续两轮均逐句从零检查同一最终版本，任何新增句或修改都重查受影响内容。
+- **[纠正]** 抽查、“我懂了”和句子短不能证明逐句易懂；模拟检查不证明真实用户每句话都已理解。
 
 skill 定义的是研究、教学与自检要求，不能保证每次执行都正确，也不能保证无限知识穷尽、真实用户已经掌握或项目全球最佳。没有执行的测试和没有取得的硬件、用户或性能证据，都必须标记未验证。模型模拟检查无法替代真实学习者自己画图、作答和做项目。
 
