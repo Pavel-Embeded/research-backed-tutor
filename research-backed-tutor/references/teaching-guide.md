@@ -2,6 +2,8 @@
 
 Use this reference to turn the checked knowledge map into a complete beginner guide. The goal is understanding that transfers to new problems, not an impressive volume of facts.
 
+Read [understanding-design.md](understanding-design.md) for every substantive lesson. First-time instruction must expose the path from a motivated problem through taught premises and justified steps to a checked result. A conclusion-dense summary, glossary or comparison table is a review aid; it cannot substitute for that path. Respect an explicit request for review or brevity without claiming the full teaching gates have passed.
+
 Read and apply [plain-language.md](plain-language.md) when writing or revising. Assume the reader has no knowledge of the field, including its terms, symbols, diagrams, methods, and tools. Explain each necessary prerequisite before use. Prefer concrete everyday language, clear subjects, and small connected steps; preserve exact conditions and technical accuracy. Every final sentence and non-sentence expression unit needs its own simulated-beginner check and restatement evidence. This includes headings, tables, diagrams, formulas, code, commands, exercises, answers, and the final check summary. Paragraph sampling and a general claim of readability do not meet this requirement.
 
 ## Build the logical chain
@@ -9,8 +11,8 @@ Read and apply [plain-language.md](plain-language.md) when writing or revising. 
 1. State the learner's goal and show a small map of where the topic sits in the larger field. Introduce only prerequisites that later reasoning actually uses.
 2. Explain the real problem or historical setting that motivated the idea. Separate sourced history from a simplified teaching story.
 3. Give a plain-language intuition, then precise terms and boundaries. For every new symbol, rule, or mechanism, show the need it answers and what would fail without it.
-4. Derive or explain each main point in small steps: known premise, operation or observation, inference, assumption, and consequence. For a mathematical topic, show intermediate algebra and units; for code, trace input, state, output, and failure cases; for a humanities topic, trace evidence, interpretation, and competing views.
-5. Give a concrete example followed by a changed example that tests whether the rule still applies. Use analogies to help entry, then say exactly where each analogy breaks.
+4. Derive or explain each main point in small steps: known premise, purpose of this step, justified operation or observation, inference, assumption, and consequence. For a mathematical topic, show intermediate algebra and units; for code, trace input, state, output, and failure cases; for a humanities topic, trace evidence, interpretation, and competing views. Explain what connects adjacent steps: a label such as “damping” does not establish why a parameter changes the observed behavior.
+5. Work one concrete example through method choice, steps, verification and interpretation; follow it with a completion task and an independent changed case. Change one factor where practical and ask for a prediction before calculating. Include a change that tests the reasoning or method choice, not only arithmetic. Use analogies to help entry, then say exactly where each analogy breaks.
 6. Compare nearby and easily confused concepts using the same dimensions. Explain typical wrong answers and why they fail.
 7. Show practical uses and then zoom back out: how the parts connect, which ideas generalize, and what remains an open question.
 

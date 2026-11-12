@@ -1,10 +1,23 @@
 # Research-backed Tutor · 研究型知识导师
 
-**把你当作对这个领域一无所知的人，用通俗语言从头讲起，并在交付前逐句检查、逐句完善。**
+**从你已掌握的基础出发，把问题、原理、推导、例题和独立应用连起来，并在交付前逐句核查。**
 
-这是一个面向 Codex 的跨学科教学 skill，也就是一套可重复使用的任务指令。它引导 AI 结合论文、教材、专家公开讲解和项目资料调查知识，再从基础构造完整讲解。**v3.0.0** 要求用户和每轮模拟初学者都从完全没有领域知识的起点开始；最终每一句都要有实际检查记录，发现不懂或复述错误就改讲解，尽最大可能降低理解成本。
+这是一个供 Codex、Trae 和 DeepSeek Harness 使用的跨学科教学 skill，也就是一套可重复使用的任务指令。它引导 AI 核对论文、教材与实际资料，再从学习者的起点构造完整讲解。**v4.0.0** 在 v3 的零前置、逐句检查、知识网络和独立项目基础上，增加“理解建构”门槛：核心结论必须展示问题、已教前提、因果或证据链、推导依据、完整示例和变化条件下的独立应用。明确声明的已有基础可沿用，其他必要前置先教。
 
-[查看主 skill](research-backed-tutor/SKILL.md) · [下载 v3 安装包](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip) · [反馈问题](https://github.com/Pavel-Embeded/research-backed-tutor/issues)
+[查看主 skill](research-backed-tutor/SKILL.md) · [下载 v4 安装包](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip) · [反馈问题](https://github.com/Pavel-Embeded/research-backed-tutor/issues)
+
+## v4 怎样让学习者走到结论
+
+这次修订源于 K09《从一阶滤波器到二阶滤波器》的两份讲解比较：简短材料主要罗列结论，展开材料展示了建立这些结论的过程。skill 将这种差别落实为要求：
+
+- **先有问题，再引入概念**：说明这一节要解决什么、旧方法哪里不足、与已教知识怎样连接。
+- **每个关键步骤说明依据**：推导里交代为什么选这个方法、如何操作和结果意味着什么；相邻句都能复述，仍要检查两句之间是否缺少推理。
+- **用完整例题核验**：定量主题展示代入、计算、单位和合理性检查；定性主题用具体证据与案例。
+- **改变条件再预测**：尽量一次改变一个因素，核对哪一步仍成立、哪一步需要重算，并处理易混概念与反例。
+- **逐步撤去帮助**：完整例题之后安排补全关键步骤与独立变式；迁移题改变影响推理的条件，不能只改数字。
+- **让图、公式和文字对应**：先教读法，标签一致，观察后解释原因；静态文本给可复现步骤，不能冒充可点击交互。
+
+首次教学默认展开上述过程，学完再给复习摘要。用户明确要短答或速查时尊重要求。没有固定字数，也不把每课机械分成相同标题。具体方法、K09 回归案例和可核查证据见[理解建构指南](research-backed-tutor/references/understanding-design.md)与[学习科学依据](research-backed-tutor/references/learning-science.md)。文献支持设计方向，不能证明本 skill 已经使真实用户掌握。
 
 ## v3 怎样降低理解成本
 
@@ -20,7 +33,8 @@
 
 ```text
 知识调查与多轮证据研究
-  → 用通俗语言从完全零基础讲起
+  → 从具体问题与已教基础出发，逐步展开直觉、术语、条件和推导依据
+  → 完整例题核验，改变条件先预测，再逐步撤去帮助
   → 初学者逐句提问、用自己的话复述，并推导、画图、解新题和做项目
   → 核验实际产物
   → 发现问题或错误：修订讲解、补前置、换题重检
@@ -41,6 +55,8 @@
 ```text
 使用 $research-backed-tutor，把我当作对这个领域一无所知的人，
 用通俗语言讲清每一句；后台每轮也从完全零基础逐句提问、复述、纠错和复检。
+每个核心机制从具体问题、直觉、原理讲到有依据的推导和完整例题，
+改变条件先预测，再用补全题和独立变式检验。
 再检验完整知识网络重建与独立项目，附来源、例题、自测答案与实际验收结果。
 ```
 
@@ -61,6 +77,7 @@
 | 多轮研究 | 使用中英文关键词、同义词、参考文献追踪和缺口检索 | 减少只看一次搜索结果造成的遗漏 |
 | 核对来源 | 区分全文、章节、摘要、预览、元数据和搜索片段 | 清楚哪些结论有直接证据 |
 | 从基础推导 | 按前提、步骤、推论、假设与边界解释；保留关键中间过程 | 学会推理，而非只记结论 |
+| 理解建构 | 追溯动机、已教前提和跨句因果，核对完整示例、条件对比、补全题与独立变式 | 可以沿讲解自己走到结论，并在条件变化时重新判断 |
 | 逐句降低难度 | 先讲清事情再给名称，明确指代，补前提；每句和图表公式等逐项检查 | 减少每一步需要自己猜测的内容 |
 | 例题与迁移 | 先给简单例子，再改变条件；比较易混概念与错误解法 | 检查能否在新情境中使用知识 |
 | 自测与补课 | 提供练习、详细答案和自评标准；针对错误补前置知识 | 发现自己具体卡在哪一步 |
@@ -79,7 +96,7 @@
 
 如果只需要一句定义、简单翻译或一个确定事实，通常不需要启动完整研究流程。
 
-## 安装到 Codex
+## 安装到 Codex、Trae 与 DeepSeek Harness
 
 本仓库保留 skill 的独立目录：`research-backed-tutor/`。安装时复制这个目录，保留其中的 `agents/` 和 `references/`。
 
@@ -95,7 +112,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 
 ### 方法二：下载并手动放置
 
-1. [下载 v3 ZIP](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip)，解压得到 `research-backed-tutor/`。
+1. [下载 v4 ZIP](https://github.com/Pavel-Embeded/research-backed-tutor/raw/refs/heads/main/dist/research-backed-tutor.zip)，解压得到 `research-backed-tutor/`。
 2. 按使用范围，把该目录放到下面其中一个位置：
 
 | 使用范围 | Windows | macOS / Linux |
@@ -107,6 +124,19 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 4. 在 skill 选择器中找到“研究型知识导师”，或用 `$research-backed-tutor` 调用。如果尚未显示，重启 Codex 后再检查。
 
 以上发现目录和调用方式依据 [OpenAI 官方 skill 文档](https://learn.chatgpt.com/docs/build-skills)。不同版本或受管理的环境可能有不同的安装配置，请以当前运行环境为准。
+
+### 本次核对的 Windows 环境
+
+2026-11-12 在本机核对了以下目录；它们是本次环境的安装位置，不代表所有版本都采用同一路径。
+
+| 环境 | skill 安装位置 |
+| --- | --- |
+| Codex 当前已用目录 | `%USERPROFILE%\.codex\skills\research-backed-tutor\` |
+| Codex／Harness 共用发现目录 | `%USERPROFILE%\.agents\skills\research-backed-tutor\` |
+| Trae CN 当前已用目录 | `%USERPROFILE%\.trae-cn\skills\research-backed-tutor\` |
+| DeepSeek Harness 个人目录 | `%USERPROFILE%\.dsh\skills\research-backed-tutor\` |
+
+DeepSeek Harness 的本机文件系统提供器会读取 `.dsh/skills` 和 `.agents/skills`，也支持项目或自定义目录；路径可由环境与配置覆盖。本次同步同一包的全部文件，并核对文件清单和内容校验值。skill 指令跨环境相同；各环境能否检索、读图或使用独立 agent，仍由其实际工具决定。界面尚未刷新时，重新打开会话或重启对应应用后检查。
 
 ### 所需能力
 
@@ -170,7 +200,7 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 - 摘要、目录、预览和搜索片段不能写成“已读全文”。访问不到的来源应说明限制。
 - 检索停止条件是针对缺口的一轮搜索未再产生重要概念分支或纠正；不能宣称穷尽全部文献。
 
-详细规则见 [研究方法](research-backed-tutor/references/research-method.md)、[教学指南](research-backed-tutor/references/teaching-guide.md)、[逐句易懂指南](research-backed-tutor/references/plain-language.md)、[知识调查指南](research-backed-tutor/references/investigation-guide.md)、[初学者闭环](research-backed-tutor/references/mastery-loop.md) 和 [独立项目检验](research-backed-tutor/references/project-lab.md)。
+详细规则见 [研究方法](research-backed-tutor/references/research-method.md)、[教学指南](research-backed-tutor/references/teaching-guide.md)、[理解建构](research-backed-tutor/references/understanding-design.md)、[学习科学依据](research-backed-tutor/references/learning-science.md)、[逐句易懂指南](research-backed-tutor/references/plain-language.md)、[知识调查指南](research-backed-tutor/references/investigation-guide.md)、[初学者闭环](research-backed-tutor/references/mastery-loop.md) 和 [独立项目检验](research-backed-tutor/references/project-lab.md)。
 
 ## 仓库结构
 
@@ -178,7 +208,9 @@ https://github.com/Pavel-Embeded/research-backed-tutor
 research-backed-tutor/
 ├── README.md                          # 中文介绍、安装与调用示例
 ├── dist/
-│   ├── research-backed-tutor.zip       # 当前 v3.0.0 可安装包
+│   ├── research-backed-tutor.zip       # 当前 v4.0.0 可安装包
+│   ├── research-backed-tutor-v4.0.0.zip # 固定版本安装包
+│   ├── research-backed-tutor-v3.0.0.zip # 保存的上一版安装包
 │   ├── research-backed-tutor-v2.0.0.zip # 保存的上一版安装包
 │   └── research-backed-tutor-original.zip # 初次上传的原始包
 ├── THIRD_PARTY_NOTICES.md              # 白月光框架来源与第三方许可
@@ -191,6 +223,8 @@ research-backed-tutor/
     └── references/
         ├── research-method.md         # 检索、证据、覆盖矩阵与停止条件
         ├── teaching-guide.md          # 推导、例题、误区、自测与补课方式
+        ├── understanding-design.md    # 问题、因果、示例、支撑撤除和深度门槛
+        ├── learning-science.md        # 教学设计依据与实际读取边界
         ├── investigation-guide.md     # 调查入口、节点、带类型的关系与去重
         ├── mastery-loop.md            # 初学者提问、输出、返修与严格验收
         ├── plain-language.md          # 完全零基础、逐句复述、修订与全覆盖检查
@@ -200,7 +234,13 @@ research-backed-tutor/
 
 ## 当前版本与边界
 
-当前版本为 **v3.0.0（2026-10-08）**，安装目录名与调用名仍为 `research-backed-tutor`。旧原始包保留在 [research-backed-tutor-original.zip](dist/research-backed-tutor-original.zip)，上一版保留在 [research-backed-tutor-v2.0.0.zip](dist/research-backed-tutor-v2.0.0.zip)，当前下载入口已更新到 v3。
+当前版本为 **v4.0.0（2026-11-12）**，安装目录名与调用名仍为 `research-backed-tutor`。当前固定包为 [research-backed-tutor-v4.0.0.zip](dist/research-backed-tutor-v4.0.0.zip)；[v3.0.0](dist/research-backed-tutor-v3.0.0.zip)、[v2.0.0](dist/research-backed-tutor-v2.0.0.zip)和[最初原始包](dist/research-backed-tutor-original.zip)保留。当前通用下载入口与固定 v4 包内容一致。
+
+- **[新增]** 核心机制的理解建构检查：动机、已教基础、因果／证据链、完整示例、条件变化与独立迁移缺一需补。
+- **[新增]** 完整示例、补全关键步骤和改变推理条件的变式，逐步减少帮助；图、公式和现实对象互相对应。
+- **[纠正]** 逐句通顺、字数增加和公式罗列不能代替推导；文献依据、模拟检查与真实用户掌握分别报告。
+
+以下 v3 要求继续保留：
 
 - **[保留]** v2 的多来源研究、白月光调查思路、完整知识网络、例题答案、独立项目及严格验收。
 - **[改写]** 用户与每轮模拟初学者均从完全没有领域基础开始；逐段质疑改为逐句检查。

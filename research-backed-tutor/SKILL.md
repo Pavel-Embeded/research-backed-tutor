@@ -1,8 +1,8 @@
 ---
 name: research-backed-tutor
-description: Research reliable sources and teach a learner with no knowledge of the field using plain language, exhaustive sentence-by-sentence simulated-beginner checks, knowledge-network reconstruction, and independent project verification. Use for substantial source-backed learning; not a quick definition or simple factual answer.
+description: Research reliable sources and teach from the learner's starting point through motivated questions, causal explanations, stepwise derivations, worked examples and independent transfer, with sentence-level beginner checks, knowledge-network reconstruction and project verification. Use for substantial source-backed learning; not a quick definition or simple factual answer.
 metadata:
-  version: "3.0.0"
+  version: "4.0.0"
 ---
 
 # 研究型知识导师
@@ -43,6 +43,12 @@ metadata:
 
 构造课程时读 [teaching-guide.md](references/teaching-guide.md) 和 [plain-language.md](references/plain-language.md)。用用户语言提供完整手册，依次连接现实问题、前置知识、直觉、准确定义、条件、逐步推导、例子、反例、易混概念、应用和整体网络。
 
+首次学习默认交付能沿着走到结论的完整讲解；先说明这一节解决什么、为何需要、与已教内容怎样连接，再展开核心机制。知识点摘要、术语表、结论对照表或高密度截图式段落只能辅助复习，不能代替首次讲解。用户明确要求速查、复习或短答时尊重其格式，不擅自扩成整门课程，也不把摘要标成完整教学验收通过。
+
+编写每个核心机制前，读并应用 [理解建构与教学深度](references/understanding-design.md)。用“问题 → 已教基础 → 直觉与术语 → 原理和条件 → 有依据的推导 → 具体核验 → 改变条件 → 独立应用”组织内容；这是一条逻辑链，不是必须填满的八个标题。每个关键结论都要能追溯到已教前提，说明中间发生什么、为什么以及条件失效会怎样。逐句能复述，还必须能沿相邻句重建这个过程；只换通俗词、拆短句或增加篇幅不能补上因果缺口。
+
+核心机制配完整示例，说明为何选这个方法、各步骤依据及结果含义；再用补全关键步骤和未展示答案的变式逐步撤去帮助。定量主题核对数值、单位与数量级，定性主题核对具体证据或案例。图、公式与文字使用一致标签并相邻解释，读图先讲轴、单位、比较条件与观察任务。适用的交互要实际可操作；静态交付给可复现计算或观察步骤，不能只写“点击观察”。
+
 尽最大可能降低每一句的理解成本。先用具体、通俗的表达讲清事情，再给必要的专业名称；一句尽量只承载一个主要意思，说清谁做什么、为什么和结果。新词必须在首次使用处讲明白，前提必须先教，指代必须明确。标题、列表、表格、图中文字、公式说明、代码注释与项目操作说明同样适用，不能只检查正文或抽查代表句。保留准确性和完整知识范围，通过拆句、补前置和分层组织降低难度，不能删掉难点来冒充易懂。
 
 每步说明前提、操作、推论和边界；新符号先解释，不能用“显然”“容易知道”跳过初学者需要的过程。类比后写明哪里失效。数学给中间步骤，代码追踪输入、状态、输出和失败情形，人文区分史料、解释与争议。
@@ -59,7 +65,7 @@ metadata:
 
 ## 6. 知识网络与独立项目是必检项
 
-以主题范围内的覆盖矩阵核查：目的、动机、本质、定义、条件、推导、关系、细节、易混项、反例、应用和未解决分支。初学者在看不到完成版图谱时，从已教内容自己生成节点表、带类型的边表和可手绘关系图，并逐项解释边的依据。
+以主题范围内的覆盖矩阵核查：目的、动机、本质、定义、条件、推导、关系、细节、易混项、反例、应用和未解决分支。按 [understanding-design.md](references/understanding-design.md) 记录核心机制的因果链、示例核验、变化预测与独立迁移证据；理解建构缺口未解决时，即使每句都能复述也不能通过。初学者在看不到完成版图谱时，从已教内容自己生成节点表、带类型的边表和可手绘关系图，并逐项解释边的依据。
 
 项目设计与验证读 [project-lab.md](references/project-lab.md)。初学者必须从空白独立构造核心逻辑，而非抄导师范文；用与示例不同的任务检验，说明每个模块为何存在、依赖什么知识、如何运行和出错时如何定位。生成实际适用的代码、推导、实验方案或证据作品；不能把项目建议书当成已完成项目。
 
