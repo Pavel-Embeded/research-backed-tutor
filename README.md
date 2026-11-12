@@ -209,10 +209,7 @@ research-backed-tutor/
 ├── README.md                          # 中文介绍、安装与调用示例
 ├── dist/
 │   ├── research-backed-tutor.zip       # 当前 v4.0.0 可安装包
-│   ├── research-backed-tutor-v4.0.0.zip # 固定版本安装包
-│   ├── research-backed-tutor-v3.0.0.zip # 保存的上一版安装包
-│   ├── research-backed-tutor-v2.0.0.zip # 保存的上一版安装包
-│   └── research-backed-tutor-original.zip # 初次上传的原始包
+│   └── research-backed-tutor-v4.0.0.zip # 固定版本安装包
 ├── THIRD_PARTY_NOTICES.md              # 白月光框架来源与第三方许可
 └── research-backed-tutor/             # 实际安装的 skill 目录
     ├── SKILL.md                       # 触发描述与完整工作流程
@@ -234,7 +231,7 @@ research-backed-tutor/
 
 ## 当前版本与边界
 
-当前版本为 **v4.0.0（2026-11-12）**，安装目录名与调用名仍为 `research-backed-tutor`。当前固定包为 [research-backed-tutor-v4.0.0.zip](dist/research-backed-tutor-v4.0.0.zip)；[v3.0.0](dist/research-backed-tutor-v3.0.0.zip)、[v2.0.0](dist/research-backed-tutor-v2.0.0.zip)和[最初原始包](dist/research-backed-tutor-original.zip)保留。当前通用下载入口与固定 v4 包内容一致。
+当前版本为 **v4.0.0（2026-11-12）**，安装目录名与调用名仍为 `research-backed-tutor`。当前固定包为 [research-backed-tutor-v4.0.0.zip](dist/research-backed-tutor-v4.0.0.zip)，通用下载入口与固定 v4 包内容一致。按用户要求，当前分支已移除原始版、v2 和 v3 安装包，仅保留 v4 下载。
 
 - **[新增]** 核心机制的理解建构检查：动机、已教基础、因果／证据链、完整示例、条件变化与独立迁移缺一需补。
 - **[新增]** 完整示例、补全关键步骤和改变推理条件的变式，逐步减少帮助；图、公式和现实对象互相对应。
